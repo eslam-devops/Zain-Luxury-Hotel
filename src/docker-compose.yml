@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  database:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: zain
+      POSTGRES_PASSWORD: zain123
+      POSTGRES_DB: hotel_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - database
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
