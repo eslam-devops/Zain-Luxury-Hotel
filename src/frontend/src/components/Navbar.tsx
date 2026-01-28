@@ -1,16 +1,33 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import "./Navbar.css";
 
 function Navbar() {
-  return (
-    <nav className="navbar">
-      <h2 className="logo">Zain Hotel</h2>
+  const [scrolled, setScrolled] = useState(false);
 
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/rooms">Rooms</Link></li>
-        <li><Link to="/register">Register</Link></li>
-        <li><Link to="/login">Login</Link></li>
-      </ul>
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <div className="navbar-container">
+        <div className="logo">
+          Zain <span>Luxury</span>
+        </div>
+
+        <ul className="nav-links">
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/rooms">Rooms</Link></li>
+          <li><Link to="/register">Register</Link></li>
+          <li><Link to="/login" className="login-btn">Login</Link></li>
+        </ul>
+      </div>
     </nav>
   );
 }
