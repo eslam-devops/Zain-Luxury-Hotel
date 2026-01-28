@@ -1,3 +1,4 @@
+const authRoutes = require("./routes/authRoutes");
 const express = require('express');
 const cors = require('cors');
 const pool = require('./db');
@@ -41,6 +42,7 @@ app.post('/api/bookings', async (req, res) => {
   }
 });
 
+app.use("/api/auth", authRoutes);
 app.listen(process.env.PORT, () => {
   console.log(`Backend running on ${process.env.PORT}`);
 });
