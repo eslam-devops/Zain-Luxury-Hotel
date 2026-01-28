@@ -1,0 +1,114 @@
+/* ===============================
+   ROOMS PAGE
+================================ */
+.rooms-page {
+  padding: 80px 10%;
+}
+
+.rooms-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.rooms-header h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+.rooms-header p {
+  margin-top: 15px;
+  opacity: 0.8;
+}
+
+/* ===============================
+   ROOMS GRID
+================================ */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+/* ===============================
+   ROOM CARD
+================================ */
+.room-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.5s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+}
+
+/* Image */
+.room-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.room-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(7, 10, 19, 0.9)
+  );
+}
+
+/* Content */
+.room-content {
+  padding: 30px;
+}
+
+.room-content h3 {
+  color: #f5c77a;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.room-content p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* Footer */
+.room-footer {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f5c77a;
+}
+
+.room-footer button {
+  padding: 10px 22px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f5c77a, #cfa44a);
+  color: #070a13;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(245, 199, 122, 0.4);
+}
+
+.room-footer button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 50px rgba(245, 199, 122, 0.6);
+}
+
