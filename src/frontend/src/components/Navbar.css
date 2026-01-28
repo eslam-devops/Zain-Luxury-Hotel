@@ -1,0 +1,77 @@
+/* ===============================
+   LUXURY NAVBAR
+================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+}
+
+/* Transparent by default */
+.navbar {
+  background: transparent;
+}
+
+/* On Scroll */
+.navbar.scrolled {
+  background: rgba(7, 10, 19, 0.75);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo */
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #f5c77a;
+  text-shadow: 0 0 20px rgba(245, 199, 122, 0.6);
+}
+
+/* Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+/* Login Button */
+.login-btn {
+  padding: 10px 22px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #f5c77a, #cfa44a);
+  color: #070a13 !important;
+  box-shadow: 0 10px 30px rgba(245, 199, 122, 0.4);
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(245, 199, 122, 0.6);
+}
+
