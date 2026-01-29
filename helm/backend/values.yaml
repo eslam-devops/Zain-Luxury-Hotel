@@ -1,0 +1,31 @@
+replicaCount: 2
+
+image:
+  repository: eslamzain99/zain-hotel-backend
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 8000
+
+env:
+  NODE_ENV: production
+
+resources:
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+  requests:
+    cpu: "250m"
+    memory: "256Mi"
+---
+# helm lint helm/backend
+# helm template backend helm/backend
+# #
+# helm upgrade --install backend helm/backend \ #
+#   --set image.tag=1 \
+#   -n dev --create-namespace
+# kubectl get all -n dev
+# kubectl get pods -n dev
+# kubectl get svc -n dev

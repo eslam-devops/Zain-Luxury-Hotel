@@ -1,0 +1,28 @@
+replicaCount: 2
+
+image:
+  repository: eslamzain99/zain-hotel-frontend
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    cpu: "300m"
+    memory: "256Mi"
+  requests:
+    cpu: "150m"
+    memory: "128Mi"
+---
+# helm lint helm/frontend
+# helm template frontend helm/frontend
+# #
+# helm upgrade --install frontend helm/frontend \ #
+#   --set image.tag=1 \
+#   -n dev --create-namespace
+# kubectl get all -n dev
+# kubectl get pods -n dev
+# kubectl get svc -n dev

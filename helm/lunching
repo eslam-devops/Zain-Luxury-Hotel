@@ -1,0 +1,24 @@
+helm upgrade --install backend helm/backend \
+  -f helm/backend/values-dev.yaml \
+  -n dev
+
+helm upgrade --install frontend helm/frontend \
+  -f helm/frontend/values-dev.yaml \
+  -n dev
+
+helm upgrade --install ingress helm/ingress \
+  -f helm/ingress/values-dev.yaml \
+  -n dev
+--------------------------------
+
+helm upgrade --install backend helm/backend \
+  -f helm/backend/values-prod.yaml \
+  -n prod
+helm upgrade --install frontend helm/frontend \
+  -f helm/frontend/values-prod.yaml \
+    -n prod
+helm upgrade --install ingress helm/ingress \
+  -f helm/ingress/values-prod.yaml \
+    -n prod
+--------------------------------
+

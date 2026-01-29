@@ -1,0 +1,20 @@
+domain: zain-hotel.example.com
+
+alb:
+  scheme: internet-facing
+  targetType: ip
+  certificateArn: arn:aws:acm:us-east-1:123456789012:certificate/xxxx # Replace with your ACM certificate ARN
+
+services:
+  frontend:
+    name: frontend
+    port: 80
+  backend:
+    name: backend
+    port: 8000
+
+---
+# helm lint helm/ingress
+# helm template ingress helm/ingress
+# helm upgrade --install ingress helm/ingress \
+#   -n dev --create-namespace
