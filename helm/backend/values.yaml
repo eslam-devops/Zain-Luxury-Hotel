@@ -12,13 +12,8 @@ service:
 env:
   NODE_ENV: production
 
-resources:
-  limits:
-    cpu: "500m"
-    memory: "512Mi"
-  requests:
-    cpu: "250m"
-    memory: "256Mi"
+resources: {}
+
 ---
 # helm lint helm/backend
 # helm template backend helm/backend
@@ -29,4 +24,5 @@ resources:
 # kubectl get all -n dev
 # kubectl get pods -n dev
 # kubectl get svc -n dev
+
 
