@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:
+ metadata:
   name: {{ include "frontend.fullname" . }}
   labels:
-    app: {{ include "frontend.name" . }}
+    {{- include "frontend.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -20,3 +20,4 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 80
+
