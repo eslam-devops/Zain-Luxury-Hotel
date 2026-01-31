@@ -26,3 +26,4 @@ resources:
 # kubectl get all -n dev
 # kubectl get pods -n dev
 # kubectl get svc -n dev
+
