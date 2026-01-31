@@ -23,7 +23,4 @@ spec:
                 name: backend-config
             - secretRef:
                 name: backend-secret
-          resources:
-                    {{- toYaml .Values.resources | nindent 12 }}
-
-
+          resources: {{- toYaml .Values.resources | nindent 12 }}
