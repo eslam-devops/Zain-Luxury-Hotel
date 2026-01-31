@@ -1,0 +1,9 @@
+domain: zain-hotel.local
+
+services:
+  frontend:
+    name: frontend
+    port: 80
+  backend:
+    name: backend
+    port: 8000
