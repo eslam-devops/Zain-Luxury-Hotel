@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: zain-backend
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/eslam-devops/Zain-Luxury-Hotel.git
+    targetRevision: develop
+    path: helm/backend
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: zain-hotel
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
