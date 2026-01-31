@@ -23,7 +23,9 @@ replicas: {{ .Values.replicaCount | default 1 }}
                 name: backend-config
             - secretRef:
                 name: backend-secret
-                resources: {}
+                resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+
 
 
 
