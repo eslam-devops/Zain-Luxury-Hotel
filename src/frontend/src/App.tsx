@@ -1,10 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Rooms from "./pages/Rooms";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import "./App.css";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Rooms from './pages/Rooms';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Booking from './pages/Booking';
+import './App.css';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/rooms" element={<Rooms />} />
+        <Route path="/book/:roomId" element={<Booking />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Routes>
@@ -22,4 +24,3 @@ function App() {
 }
 
 export default App;
-

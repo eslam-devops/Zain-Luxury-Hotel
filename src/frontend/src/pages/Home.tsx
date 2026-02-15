@@ -1,28 +1,31 @@
-import "./Home.css";
+import { useNavigate } from 'react-router-dom';
+import './Home.css';
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="home">
-      {/* HERO SECTION */}
       <section className="hero">
-        <div className="hero-overlay"></div>
+        <div className="hero-overlay" />
 
         <div className="hero-content">
           <h1>
             Zain <span>Luxury</span> Hotel
           </h1>
-          <p>
-            Experience elegance, comfort, and luxury in the heart of the city.
-          </p>
+          <p>Experience elegance, comfort, and luxury in the heart of the city.</p>
 
           <div className="hero-buttons">
-            <button className="btn primary">Explore Rooms</button>
-            <button className="btn secondary">Book Now</button>
+            <button className="btn primary" onClick={() => navigate('/rooms')}>
+              Explore Rooms
+            </button>
+            <button className="btn secondary" onClick={() => navigate('/rooms')}>
+              Book Now
+            </button>
           </div>
         </div>
       </section>
 
-      {/* FEATURES */}
       <section className="features">
         <div className="feature-card">
           <h3>🌙 Night Luxury</h3>
@@ -44,4 +47,3 @@ function Home() {
 }
 
 export default Home;
-
